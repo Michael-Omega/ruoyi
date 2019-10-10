@@ -16,7 +16,13 @@
 	</description>
 
     <dependencies>
-    
+
+        <!--使用Slf4j注释-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
         <!-- SpringBoot集成thymeleaf模板 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>

@@ -2,6 +2,8 @@ package com.ruoyi.framework.shiro.realm;
 
 import java.util.HashSet;
 import java.util.Set;
+
+import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;
@@ -37,10 +39,9 @@ import com.ruoyi.system.service.ISysRoleService;
  * 
  * @author ruoyi
  */
+@Slf4j
 public class UserRealm extends AuthorizingRealm
 {
-    private static final Logger log = LoggerFactory.getLogger(UserRealm.class);
-
     @Autowired
     private ISysMenuService menuService;
 
