@@ -35,9 +35,9 @@
     <div class="row">
         <div class="col-sm-12">
             <form id="signupForm">
-                <h2 class="login-title">后台管理系统</h2>
-                <input type="text" name="username" class="form-control uname" placeholder="用户名" value="admin" />
-                <input type="password" name="password" class="form-control pword" placeholder="密码"   value="admin123" />
+                <h2 class="login-title">[[${otherSet.siteName}]]</h2>
+                <input type="text" name="username" class="form-control uname" placeholder="用户名"/>
+                <input type="password" name="password" class="form-control pword" placeholder="密码" />
                 <div class="row m-t" th:if="${captchaEnabled==true}">
                     <div class="col-xs-6">
                         <input type="text" name="validateCode" class="form-control code" placeholder="验证码" maxlength="5" autocomplete="off">
@@ -57,7 +57,7 @@
     </div>
     <div class="signup-footer">
         <div class="pull-left">
-            &copy; 2019 All Rights Reserved. RuoYi <br>
+            &copy; 2019 [[${otherSet.copyRightInfo}]]<br>
         </div>
     </div>
 </div>

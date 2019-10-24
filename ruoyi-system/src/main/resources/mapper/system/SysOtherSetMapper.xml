@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysOtherSetMapper">
+    
+    <resultMap type="SysOtherSet" id="SysOtherSetResult">
+        <result property="id"    column="id"    />
+        <result property="siteName"    column="site_name"    />
+        <result property="websiteDomain"    column="website_domain"    />
+        <result property="homeTitle"    column="home_title"    />
+        <result property="metaKey"    column="meta_key"    />
+        <result property="metaDescri"    column="meta_descri"    />
+        <result property="copyRightInfo"    column="copy_right_info"    />
+    </resultMap>
+
+    <sql id="selectSysOtherSetVo">
+        select id, site_name, website_domain, home_title, meta_key, meta_descri, copy_right_info from sys_other_set
+    </sql>
+
+    <select id="selectSysOtherSetList" parameterType="SysOtherSet" resultMap="SysOtherSetResult">
+        <include refid="selectSysOtherSetVo"/>
+        <where>  
+            <if test="siteName != null  and siteName != ''"> and site_name like concat('%', #{siteName}, '%')</if>
+            <if test="websiteDomain != null  and websiteDomain != ''"> and website_domain = #{websiteDomain}</if>
+            <if test="homeTitle != null  and homeTitle != ''"> and home_title = #{homeTitle}</if>
+            <if test="metaKey != null  and metaKey != ''"> and meta_key = #{metaKey}</if>
+            <if test="metaDescri != null  and metaDescri != ''"> and meta_descri = #{metaDescri}</if>
+            <if test="copyRightInfo != null  and copyRightInfo != ''"> and copy_right_info = #{copyRightInfo}</if>
+        </where>
+    </select>
+    
+    <select id="selectSysOtherSetById" parameterType="Long" resultMap="SysOtherSetResult">
+        <include refid="selectSysOtherSetVo"/>
+        where id = #{id}
+    </select>
+        
+    <insert id="insertSysOtherSet" parameterType="SysOtherSet">
+        insert into sys_other_set
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null ">id,</if>
+            <if test="siteName != null  and siteName != ''">site_name,</if>
+            <if test="websiteDomain != null  and websiteDomain != ''">website_domain,</if>
+            <if test="homeTitle != null  and homeTitle != ''">home_title,</if>
+            <if test="metaKey != null  and metaKey != ''">meta_key,</if>
+            <if test="metaDescri != null  and metaDescri != ''">meta_descri,</if>
+            <if test="copyRightInfo != null  and copyRightInfo != ''">copy_right_info,</if>
+         </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null ">#{id},</if>
+            <if test="siteName != null  and siteName != ''">#{siteName},</if>
+            <if test="websiteDomain != null  and websiteDomain != ''">#{websiteDomain},</if>
+            <if test="homeTitle != null  and homeTitle != ''">#{homeTitle},</if>
+            <if test="metaKey != null  and metaKey != ''">#{metaKey},</if>
+            <if test="metaDescri != null  and metaDescri != ''">#{metaDescri},</if>
+            <if test="copyRightInfo != null  and copyRightInfo != ''">#{copyRightInfo},</if>
+         </trim>
+    </insert>
+
+    <update id="updateSysOtherSet" parameterType="SysOtherSet">
+        update sys_other_set
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="siteName != null  and siteName != ''">site_name = #{siteName},</if>
+            <if test="websiteDomain != null  and websiteDomain != ''">website_domain = #{websiteDomain},</if>
+            <if test="homeTitle != null  and homeTitle != ''">home_title = #{homeTitle},</if>
+            <if test="metaKey != null  and metaKey != ''">meta_key = #{metaKey},</if>
+            <if test="metaDescri != null  and metaDescri != ''">meta_descri = #{metaDescri},</if>
+            <if test="copyRightInfo != null  and copyRightInfo != ''">copy_right_info = #{copyRightInfo},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteSysOtherSetById" parameterType="Long">
+        delete from sys_other_set where id = #{id}
+    </delete>
+
+    <delete id="deleteSysOtherSetByIds" parameterType="String">
+        delete from sys_other_set where id in 
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+    
+</mapper>
