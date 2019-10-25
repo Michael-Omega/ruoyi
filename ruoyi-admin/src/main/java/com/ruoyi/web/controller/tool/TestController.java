@@ -72,7 +72,7 @@ public class TestController extends BaseController
     }
 
     @ApiOperation("更新用户")
-    @ApiImplicitParam(name = "userEntity", value = "新增用户信息", dataType = "UserEntity")
+    @ApiImplicitParam(name = "userEntity", value = "更新用户信息", dataType = "UserEntity")
     @PutMapping("/update")
     public AjaxResult update(UserEntity user)
     {

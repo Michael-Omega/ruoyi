@@ -1,5 +1,6 @@
 package com.ruoyi.web.controller.system;
 
+import com.ruoyi.common.service.QiniuCloudService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,8 @@ import com.ruoyi.framework.util.ShiroUtils;
 import com.ruoyi.system.domain.SysUser;
 import com.ruoyi.system.service.ISysUserService;
 
+import javax.annotation.Resource;
+
 /**
  * 个人信息 业务处理
  * 
@@ -38,6 +41,9 @@ public class SysProfileController extends BaseController
 
     @Autowired
     private ISysUserService userService;
+
+    @Resource
+    private QiniuCloudService qiniuCloudService;
     
     @Autowired
     private SysPasswordService passwordService;
@@ -154,8 +160,11 @@ public class SysProfileController extends BaseController
         {
             if (!file.isEmpty())
             {
-                String avatar = FileUploadUtils.upload(Global.getAvatarPath(), file);
-                currentUser.setAvatar(avatar);
+                System.err.println("----------"+file.getOriginalFilename());
+                String fileName = qiniuCloudService.getFileKey(file.getOriginalFilename()).replaceFirst("/","");
+                qiniuCloudService.upload(file,fileName);
+//                String avatar = FileUploadUtils.upload(Global.getAvatarPath(), file);
+                currentUser.setAvatar(fileName);
                 if (userService.updateUserInfo(currentUser) > 0)
                 {
                     ShiroUtils.setSysUser(userService.selectUserById(currentUser.getUserId()));
@@ -169,5 +178,13 @@ public class SysProfileController extends BaseController
             log.error("修改头像失败！", e);
             return error(e.getMessage());
         }
+    }
+
+    @RequestMapping("/upload/img")
+    @ResponseBody
+    public AjaxResult uploadImg(@RequestParam("file") MultipartFile file){
+        String fileName = qiniuCloudService.getFileKey(file.getOriginalFilename()).replaceFirst("/","");
+        qiniuCloudService.upload(file,fileName);
+        return AjaxResult.success(fileName);
     }
 }

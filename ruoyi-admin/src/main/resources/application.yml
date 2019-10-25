@@ -128,3 +128,12 @@ xss:
   excludes: /system/notice/*
   # 匹配链接
   urlPatterns: /system/*,/monitor/*,/tool/*
+
+# 七牛云配置------------------------------------
+# 七牛密钥，配上自己申请的七牛账号对应的密钥
+qiniu.AccessKey: OMrKNqXtfv0oen_TDvGPZI7hAiN6HV6qC94ea3lx
+qiniu.SecretKey: kl6tFk9Aq2K1K45mvpIQwCK3Ux1Vi5uLMmF8uIKG
+# 七牛空间名
+qiniu.Bucket: louis-sc
+# 外链访问路径
+qiniu.cdn.prefix: http://img.louiswu.cn/
