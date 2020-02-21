@@ -22,7 +22,7 @@ function login() {
     var rememberMe = $("input[name='rememberme']").is(':checked');
     $.ajax({
         type: "post",
-        url: ctx + "login",
+        url: ctx + "admin/login",
         data: {
             "username": username,
             "password": password,
@@ -31,7 +31,7 @@ function login() {
         },
         success: function(r) {
             if (r.code == 0) {
-                location.href = ctx + 'index';
+                location.href = ctx + 'admin/index';
             } else {
             	$.modal.closeLoading();
             	$('.imgcode').click();

@@ -1,5 +1,6 @@
 package com.ruoyi.web.controller.system;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -31,10 +32,10 @@ import com.ruoyi.system.service.ISysUserService;
  * @author ruoyi
  */
 @Controller
-@RequestMapping("/system/role")
+@RequestMapping("/admin/system/role")
 public class SysRoleController extends BaseController
 {
-    private String prefix = "system/role";
+    private String prefix = "admin/system/role";
 
     @Autowired
     private ISysRoleService roleService;

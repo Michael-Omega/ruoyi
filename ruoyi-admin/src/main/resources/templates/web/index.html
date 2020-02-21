@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{/css/bootstrap.min.css}" rel="stylesheet"/>
+</head>
+<style>
+    .container{
+
+    }
+</style>
+<body>
+<div class="container">
+<div>
+    <div>登录</div>
+    <form method="post" >
+        <div class="input-group">
+            <span class="input-group-addon" id="username">用户名</span>
+            <input type="text" class="form-control" placeholder="用户名" aria-describedby="username">
+        </div>
+        <div class="input-group">
+            <span class="input-group-addon" id="password">@</span>
+            <input type="password" class="form-control" placeholder="密码" aria-describedby="password">
+        </div>
+        <input type="submit" text="登录" class="btn btn-default">
+    </form>
+
+</div>
+</div>
+</body>
+</html>

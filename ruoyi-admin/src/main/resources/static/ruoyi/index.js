@@ -8,7 +8,7 @@ layer.config({
 });
 
 $(function() {
-    // MetsiMenu
+    // MetsiMenuctx
     $('#side-menu').metisMenu();
 
     //固定菜单栏

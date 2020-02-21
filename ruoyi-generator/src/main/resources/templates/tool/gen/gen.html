@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <head>
-	<th:block th:include="include :: header('代码生成列表')" />
+	<th:block th:include="admin/include :: header('代码生成列表')" />
 </head>
 <body class="gray-bg">
     <div class="container-div">
@@ -51,9 +51,9 @@
 			</div>
 		</div>
 	</div>
-	<th:block th:include="include :: footer" />
+	<th:block th:include="admin/include :: footer" />
 	<script th:inline="javascript">
-		var prefix = ctx + "tool/gen";
+		var prefix = ctx + "admin/tool/gen";
 		var editFlag = [[${@permission.hasPermi('tool:gen:edit')}]];
 		var removeFlag = [[${@permission.hasPermi('tool:gen:remove')}]];
 		var previewFlag = [[${@permission.hasPermi('tool:gen:preview')}]];

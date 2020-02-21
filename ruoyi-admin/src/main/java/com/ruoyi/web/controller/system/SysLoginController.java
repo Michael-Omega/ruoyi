@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import com.ruoyi.common.core.controller.BaseController;
 import com.ruoyi.common.core.domain.AjaxResult;
@@ -25,6 +26,7 @@ import com.ruoyi.common.utils.StringUtils;
  * @author ruoyi
  */
 @Controller
+@RequestMapping("/admin")
 public class SysLoginController extends BaseController
 {
     @Resource
@@ -39,7 +41,7 @@ public class SysLoginController extends BaseController
             return ServletUtils.renderString(response, "{\"code\":\"1\",\"msg\":\"未登录或登录超时。请重新登录\"}");
         }
         modelMap.put("otherSet",sysOtherSetService.selectSysOtherSetById(1L));
-        return "login";
+        return "admin/login";
     }
 
     @PostMapping("/login")
@@ -67,7 +69,7 @@ public class SysLoginController extends BaseController
     @GetMapping("/unauth")
     public String unauth()
     {
-        return "error/unauth";
+        return "admin/error/unauth";
     }
 
 }

@@ -25,10 +25,10 @@ import com.ruoyi.system.service.ISysOperLogService;
  * @author ruoyi
  */
 @Controller
-@RequestMapping("/monitor/operlog")
+@RequestMapping("/admin/monitor/operlog")
 public class SysOperlogController extends BaseController
 {
-    private String prefix = "monitor/operlog";
+    private String prefix = "admin/monitor/operlog";
 
     @Autowired
     private ISysOperLogService operLogService;

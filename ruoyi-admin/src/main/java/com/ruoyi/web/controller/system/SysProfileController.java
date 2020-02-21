@@ -32,12 +32,12 @@ import javax.annotation.Resource;
  * @author ruoyi
  */
 @Controller
-@RequestMapping("/system/user/profile")
+@RequestMapping("/admin/system/user/profile")
 public class SysProfileController extends BaseController
 {
     private static final Logger log = LoggerFactory.getLogger(SysProfileController.class);
 
-    private String prefix = "system/user/profile";
+    private String prefix = "admin/system/user/profile";
 
     @Autowired
     private ISysUserService userService;
@@ -160,11 +160,11 @@ public class SysProfileController extends BaseController
         {
             if (!file.isEmpty())
             {
-                System.err.println("----------"+file.getOriginalFilename());
-                String fileName = qiniuCloudService.getFileKey(file.getOriginalFilename()).replaceFirst("/","");
-                qiniuCloudService.upload(file,fileName);
-//                String avatar = FileUploadUtils.upload(Global.getAvatarPath(), file);
-                currentUser.setAvatar(fileName);
+//                System.err.println("----------"+file.getOriginalFilename());
+//                String fileName = qiniuCloudService.getFileKey(file.getOriginalFilename()).replaceFirst("/","");
+//                qiniuCloudService.upload(file,fileName);
+                String avatar = FileUploadUtils.upload(Global.getAvatarPath(), file);
+                currentUser.setAvatar(avatar);
                 if (userService.updateUserInfo(currentUser) > 0)
                 {
                     ShiroUtils.setSysUser(userService.selectUserById(currentUser.getUserId()));

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <th:block th:include="admin/include :: header('修改【请填写功能名称】')" />
+</head>
+<body class="white-bg">
+    <div class="wrapper wrapper-content animated fadeInRight ibox-content">
+        <form class="form-horizontal m" id="form-set-edit" th:object="${sysOtherSet}">
+            <input name="id" th:field="*{id}" type="hidden">
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">站点名称：</label>
+                <div class="col-sm-8">
+                    <input name="siteName" th:field="*{siteName}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">域名：</label>
+                <div class="col-sm-8">
+                    <input name="websiteDomain" th:field="*{websiteDomain}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">主页标题：</label>
+                <div class="col-sm-8">
+                    <input name="homeTitle" th:field="*{homeTitle}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">meta值：</label>
+                <div class="col-sm-8">
+                    <input name="metaKey" th:field="*{metaKey}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">meta描述：</label>
+                <div class="col-sm-8">
+                    <input name="metaDescri" th:field="*{metaDescri}" class="form-control" type="text">
+                </div>
+            </div>
+            <div class="form-group">    
+                <label class="col-sm-3 control-label">备案号：</label>
+                <div class="col-sm-8">
+                    <input name="copyRightInfo" th:field="*{copyRightInfo}" class="form-control" type="text">
+                </div>
+            </div>
+        </form>
+    </div>
+    <th:block th:include="admin/include :: footer" />
+    <script type="text/javascript">
+        var prefix = ctx + "admin/system/set";
+        $("#form-set-edit").validate({
+            focusCleanup: true
+        });
+
+        function submitHandler() {
+            if ($.validate.form()) {
+                $.operate.save(prefix + "/edit", $('#form-set-edit').serialize());
+            }
+        }
+    </script>
+</body>
+</html>

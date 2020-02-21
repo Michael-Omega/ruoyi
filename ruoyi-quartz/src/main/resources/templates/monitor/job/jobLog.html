@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <head>
-	<th:block th:include="include :: header('定时任务日志列表')" />
+	<th:block th:include="admin/include :: header('定时任务日志列表')" />
 </head>
 <body class="gray-bg">
 
@@ -58,12 +58,12 @@
 			</div>
 		</div>
 	</div>
-	<th:block th:include="include :: footer" />
+	<th:block th:include="admin/include :: footer" />
 	<script th:inline="javascript">
 		var detailFlag = [[${@permission.hasPermi('monitor:job:detail')}]];
 		var statusDatas = [[${@dict.getType('sys_common_status')}]];
 		var groupDatas = [[${@dict.getType('sys_job_group')}]];
-		var prefix = ctx + "monitor/jobLog";
+		var prefix = ctx + "admin/monitor/jobLog";
 
 		$(function() {
 		    var options = {

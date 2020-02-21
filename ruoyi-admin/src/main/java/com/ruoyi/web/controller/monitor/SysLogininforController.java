@@ -23,10 +23,10 @@ import com.ruoyi.system.service.ISysLogininforService;
  * @author ruoyi
  */
 @Controller
-@RequestMapping("/monitor/logininfor")
+@RequestMapping("/admin/monitor/logininfor")
 public class SysLogininforController extends BaseController
 {
-    private String prefix = "monitor/logininfor";
+    private String prefix = "admin/monitor/logininfor";
 
     @Autowired
     private ISysLogininforService logininforService;

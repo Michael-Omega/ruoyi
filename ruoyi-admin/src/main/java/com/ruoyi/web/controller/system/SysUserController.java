@@ -33,10 +33,10 @@ import com.ruoyi.system.service.ISysUserService;
  * @author ruoyi
  */
 @Controller
-@RequestMapping("/system/user")
+@RequestMapping("/admin/system/user")
 public class SysUserController extends BaseController
 {
-    private String prefix = "system/user";
+    private String prefix = "admin/system/user";
 
     @Autowired
     private ISysUserService userService;
@@ -208,6 +208,7 @@ public class SysUserController extends BaseController
     @PostMapping("/remove")
     @ResponseBody
     public AjaxResult remove(String ids)
+
     {
         try
         {
@@ -218,7 +219,6 @@ public class SysUserController extends BaseController
             return error(e.getMessage());
         }
     }
-
     /**
      * 校验用户名
      */

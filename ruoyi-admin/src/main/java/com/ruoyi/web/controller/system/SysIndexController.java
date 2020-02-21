@@ -14,6 +14,7 @@ import com.ruoyi.framework.util.ShiroUtils;
 import com.ruoyi.system.domain.SysMenu;
 import com.ruoyi.system.domain.SysUser;
 import com.ruoyi.system.service.ISysMenuService;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.Resource;
 
@@ -23,6 +24,7 @@ import javax.annotation.Resource;
  * @author ruoyi
  */
 @Controller
+@RequestMapping("/admin")
 public class SysIndexController extends BaseController
 {
     @Autowired
@@ -45,7 +47,7 @@ public class SysIndexController extends BaseController
         mmap.put("copyrightYear", Global.getCopyrightYear());
         mmap.put("demoEnabled", Global.isDemoEnabled());
         mmap.put("otherSet",sysOtherSet);
-        return "index";
+        return "admin/index";
     }
 
     // 系统介绍
@@ -53,6 +55,6 @@ public class SysIndexController extends BaseController
     public String main(ModelMap mmap)
     {
         mmap.put("version", Global.getVersion());
-        return "main_v1";
+        return "admin/main_v1";
     }
 }

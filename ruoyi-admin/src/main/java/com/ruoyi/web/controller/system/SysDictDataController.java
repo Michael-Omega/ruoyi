@@ -27,10 +27,10 @@ import com.ruoyi.system.service.ISysDictDataService;
  * @author ruoyi
  */
 @Controller
-@RequestMapping("/system/dict/data")
+@RequestMapping("/admin/system/dict/data")
 public class SysDictDataController extends BaseController
 {
-    private String prefix = "system/dict/data";
+    private String prefix = "admin/system/dict/data";
 
     @Autowired
     private ISysDictDataService dictDataService;

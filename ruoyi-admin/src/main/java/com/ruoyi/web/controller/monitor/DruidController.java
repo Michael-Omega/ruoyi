@@ -12,7 +12,7 @@ import com.ruoyi.common.core.controller.BaseController;
  * @author ruoyi
  */
 @Controller
-@RequestMapping("/monitor/data")
+@RequestMapping("/admin/monitor/data")
 public class DruidController extends BaseController
 {
     private String prefix = "/druid";

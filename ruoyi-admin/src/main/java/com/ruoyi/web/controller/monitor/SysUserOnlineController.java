@@ -27,10 +27,10 @@ import com.ruoyi.system.service.ISysUserOnlineService;
  * @author ruoyi
  */
 @Controller
-@RequestMapping("/monitor/online")
+@RequestMapping("/admin/monitor/online")
 public class SysUserOnlineController extends BaseController
 {
-    private String prefix = "monitor/online";
+    private String prefix = "admin/monitor/online";
 
     @Autowired
     private ISysUserOnlineService userOnlineService;

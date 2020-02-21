@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <head>
-	<th:block th:include="include :: header('定时任务列表')" />
+	<th:block th:include="admin/include :: header('定时任务列表')" />
 </head>
 <body class="gray-bg">
 	<div class="container-div">
@@ -57,14 +57,14 @@
 			</div>
 		</div>
 	</div>
-	<th:block th:include="include :: footer" />
+	<th:block th:include="admin/include :: footer" />
 	<script th:inline="javascript">
         var detailFlag = [[${@permission.hasPermi('monitor:job:detail')}]];
 		var editFlag = [[${@permission.hasPermi('monitor:job:edit')}]];
 		var removeFlag = [[${@permission.hasPermi('monitor:job:remove')}]];
 		var statusFlag = [[${@permission.hasPermi('monitor:job:changeStatus')}]];
 		var datas = [[${@dict.getType('sys_job_group')}]];
-		var prefix = ctx + "monitor/job";
+		var prefix = ctx + "admin/monitor/job";
 
 		$(function() {
 		    var options = {
@@ -165,7 +165,7 @@
 
 		/* 调度日志查询 */
 		function jobLog(id) {
-			var url = ctx + 'monitor/jobLog';
+			var url = ctx + 'admin/monitor/jobLog';
 			$.modal.openTab("调度日志", url);
 		}
 	</script>

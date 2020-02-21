@@ -22,7 +22,7 @@ import com.ruoyi.common.core.controller.BaseController;
  * @author ruoyi
  */
 @Controller
-@RequestMapping("/captcha")
+@RequestMapping("/admin/captcha")
 public class SysCaptchaController extends BaseController
 {
     @Resource(name = "captchaProducer")

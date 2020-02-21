@@ -33,7 +33,7 @@ import com.ruoyi.generator.service.IGenTableService;
  * @author ruoyi
  */
 @Controller
-@RequestMapping("/tool/gen")
+@RequestMapping("/admin/tool/gen")
 public class GenController extends BaseController
 {
     private String prefix = "tool/gen";

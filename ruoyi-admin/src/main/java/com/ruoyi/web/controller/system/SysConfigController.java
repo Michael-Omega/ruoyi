@@ -28,10 +28,10 @@ import com.ruoyi.system.service.ISysConfigService;
  * @author ruoyi
  */
 @Controller
-@RequestMapping("/system/config")
+@RequestMapping("/admin/system/config")
 public class SysConfigController extends BaseController
 {
-    private String prefix = "system/config";
+    private String prefix = "admin/system/config";
 
     @Autowired
     private ISysConfigService configService;

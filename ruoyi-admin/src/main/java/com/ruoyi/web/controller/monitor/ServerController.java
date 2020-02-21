@@ -14,10 +14,10 @@ import com.ruoyi.framework.web.domain.Server;
  * @author ruoyi
  */
 @Controller
-@RequestMapping("/monitor/server")
+@RequestMapping("/admin/monitor/server")
 public class ServerController extends BaseController
 {
-    private String prefix = "monitor/server";
+    private String prefix = "admin/monitor/server";
 
     @RequiresPermissions("monitor:server:view")
     @GetMapping()

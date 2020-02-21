@@ -26,10 +26,10 @@ import com.ruoyi.common.core.page.TableDataInfo;
  * @date 2019-10-12
  */
 @Controller
-@RequestMapping("/system/set")
+@RequestMapping("/admin/system/set")
 public class SysOtherSetController extends BaseController
 {
-    private String prefix = "system/set";
+    private String prefix = "admin/system/set";
 
     @Autowired
     private ISysOtherSetService sysOtherSetService;
@@ -42,7 +42,7 @@ public class SysOtherSetController extends BaseController
     }
 
     /**
-     * 查询【请填写功能名称】列表
+     * 查询【其他设置】列表
      */
     @RequiresPermissions("system:set:list")
     @PostMapping("/list")
@@ -55,7 +55,7 @@ public class SysOtherSetController extends BaseController
     }
 
     /**
-     * 导出【请填写功能名称】列表
+     * 导出【其他设置】列表
      */
     @RequiresPermissions("system:set:export")
     @PostMapping("/export")
@@ -69,7 +69,7 @@ public class SysOtherSetController extends BaseController
 
 
     /**
-     * 修改【请填写功能名称】
+     * 修改【其他设置】
      */
     @GetMapping("/edit/{id}")
     public String edit(@PathVariable("id") Long id, ModelMap mmap)
@@ -80,10 +80,10 @@ public class SysOtherSetController extends BaseController
     }
 
     /**
-     * 修改保存【请填写功能名称】
+     * 修改保存【其他设置】
      */
     @RequiresPermissions("system:set:edit")
-    @Log(title = "【请填写功能名称】", businessType = BusinessType.UPDATE)
+    @Log(title = "【其他设置】", businessType = BusinessType.UPDATE)
     @PostMapping("/edit")
     @ResponseBody
     public AjaxResult editSave(SysOtherSet sysOtherSet)

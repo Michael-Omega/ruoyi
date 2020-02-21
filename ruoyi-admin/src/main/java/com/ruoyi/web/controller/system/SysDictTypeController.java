@@ -29,10 +29,10 @@ import com.ruoyi.system.service.ISysDictTypeService;
  * @author ruoyi
  */
 @Controller
-@RequestMapping("/system/dict")
+@RequestMapping("/admin/system/dict")
 public class SysDictTypeController extends BaseController
 {
-    private String prefix = "system/dict/type";
+    private String prefix = "admin/system/dict/type";
 
     @Autowired
     private ISysDictTypeService dictTypeService;
@@ -144,7 +144,7 @@ public class SysDictTypeController extends BaseController
     {
         mmap.put("dict", dictTypeService.selectDictTypeById(dictId));
         mmap.put("dictList", dictTypeService.selectDictTypeAll());
-        return "system/dict/data/data";
+        return "admin/system/dict/data/data";
     }
 
     /**

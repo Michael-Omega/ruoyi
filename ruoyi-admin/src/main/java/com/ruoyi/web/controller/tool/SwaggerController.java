@@ -12,7 +12,7 @@ import com.ruoyi.common.core.controller.BaseController;
  * @author ruoyi
  */
 @Controller
-@RequestMapping("/tool/swagger")
+@RequestMapping("/admin/tool/swagger")
 public class SwaggerController extends BaseController
 {
     @RequiresPermissions("tool:swagger:view")

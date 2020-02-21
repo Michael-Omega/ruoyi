@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh" xmlns:th="http://www.thymeleaf.org" xmlns:shiro="http://www.pollix.at/thymeleaf/shiro">
 <head>
-	<th:block th:include="include :: header('导入表结构')" />
+	<th:block th:include="admin/include :: header('导入表结构')" />
 </head>
 <body class="gray-bg">
     <div class="container-div">
@@ -30,9 +30,9 @@
 			</div>
 		</div>
 	</div>
-	<th:block th:include="include :: footer" />
+	<th:block th:include="admin/include :: footer" />
 	<script type="text/javascript">
-		var prefix = ctx + "tool/gen";
+		var prefix = ctx + "admin/tool/gen";
 	
 		$(function() {
 		    var options = {

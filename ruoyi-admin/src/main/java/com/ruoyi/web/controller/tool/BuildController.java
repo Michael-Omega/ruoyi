@@ -12,10 +12,10 @@ import com.ruoyi.common.core.controller.BaseController;
  * @author ruoyi
  */
 @Controller
-@RequestMapping("/tool/build")
+@RequestMapping("/admin/tool/build")
 public class BuildController extends BaseController
 {
-    private String prefix = "tool/build";
+    private String prefix = "admin/tool/build";
 
     @RequiresPermissions("tool:build:view")
     @GetMapping()

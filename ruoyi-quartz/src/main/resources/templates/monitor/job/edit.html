@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh" xmlns:th="http://www.thymeleaf.org" >
 <head>
-	<th:block th:include="include :: header('修改定时任务')" />
+	<th:block th:include="admin/include :: header('修改定时任务')" />
 </head>
 <body class="white-bg">
 	<div class="wrapper wrapper-content animated fadeInRight ibox-content">
@@ -69,9 +69,9 @@
 			</div>
 		</form>
 	</div>
-	<th:block th:include="include :: footer" />
+	<th:block th:include="admin/include :: footer" />
 	<script type="text/javascript">
-		var prefix = ctx + "monitor/job";
+		var prefix = ctx + "admin/monitor/job";
 	
 		$("#form-job-edit").validate({
 			onkeyup: false,

@@ -25,7 +25,7 @@ import com.ruoyi.quartz.service.ISysJobLogService;
  * @author ruoyi
  */
 @Controller
-@RequestMapping("/monitor/jobLog")
+@RequestMapping("/admin/monitor/jobLog")
 public class SysJobLogController extends BaseController
 {
     private String prefix = "monitor/job";
