@@ -51,7 +51,7 @@
 			rules:{
 				postName:{
 					remote: {
-		                url: ctx + "system/post/checkPostNameUnique",
+		                url: prefix + "/checkPostNameUnique",
 		                type: "post",
 		                dataType: "json",
 		                data: {
@@ -69,7 +69,7 @@
 				},
 				postCode:{
 					remote: {
-		                url: ctx + "system/post/checkPostCodeUnique",
+		                url: prefix + "/checkPostCodeUnique",
 		                type: "post",
 		                dataType: "json",
 		                data: {
